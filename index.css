@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+}
+.card img {
+    width: 100%;
+    height: auto;
+}
+.card-body {
+    padding: 20px;
+}
+.card-body h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+.card-body p {
+    margin: 5px 0;
+    color: #666;
+}
+.card-body .price {
+    font-size: 20px;
+    color: #333;
+    margin: 10px 0;
+}
