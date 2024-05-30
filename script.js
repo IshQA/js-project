@@ -72,7 +72,7 @@ cars.forEach(car => {
     cardBody.className = "card-body";
 
     const brand = document.createElement("h2");
-    brand.textContent = `Brand: ${car.brand}`;
+    brand.textContent = car.brand;
     cardBody.appendChild(brand);
 
     const power = document.createElement("p");
@@ -98,7 +98,7 @@ cars.forEach(car => {
 
     const buyButton = document.createElement("button");
     buyButton.className = "buy-button";
-    buyButton.textContent = "Click to Buy";
+    buyButton.textContent = "Click to buy";
     cardBody.appendChild(buyButton);
 
     card.appendChild(cardBody);

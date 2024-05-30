@@ -9,5 +9,39 @@
 </head>
 <body>
     <div id="card-container"></div>
+
+    <div class="form-container">
+        <h2>Car Purchase Form</h2>
+        <form>
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="text" id="surname" name="surname" placeholder="Surname" required>
+
+            <div>
+                <input type="radio" id="leasing" name="payment" value="leasing" required>
+                <label for="leasing">Leasing</label>
+                <input type="radio" id="cash" name="payment" value="cash" required>
+                <label for="cash">Cash</label>
+            </div>
+
+            <select id="date" name="date" required>
+                <option value="" disabled selected>Select a date</option>
+            </select>
+
+            <div class="checkbox-group">
+                <h3>Additional options:</h3>
+                <label><input type="checkbox" name="options" value="electric-mirrors"> Electric Mirrors 500$</label>
+                <label><input type="checkbox" name="options" value="gps"> GPS 130$</label>
+                <label><input type="checkbox" name="options" value="heated-seats"> Heated Seats 240$</label>
+            </div>
+
+            <div>
+                <h3>Total:</h3>
+            </div>
+
+            <button type="submit" class="submit-button">Submit</button>
+
+            <button type="button" class="back-button" onclick="history.back()">Go back</button>
+        </form>
+    </div>
 </body>
 </html>
