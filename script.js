@@ -138,7 +138,7 @@ firstAdditionalOption.addEventListener('change', function(){
     const firstOptionPrice = 500;
     if (this.checked) {
         totalPrice += firstOptionPrice;
-        addListItems('Electric Mirrors');
+        addListItems('+ Electric Mirrors');
     } else {
         totalPrice -= firstOptionPrice;
     }
@@ -149,7 +149,7 @@ secondAdditionalOption.addEventListener('change', function(){
     const secondOptionPrice = 130;
     if (this.checked) {
         totalPrice += secondOptionPrice;
-        addListItems('GPS');
+        addListItems('+ GPS');
     } else {
         totalPrice -= secondOptionPrice;
     }
@@ -160,7 +160,7 @@ thirdAdditionalOption.addEventListener('change', function(){
     const thirdOptionPrice = 240;
     if (this.checked) {
         totalPrice += thirdOptionPrice;
-        addListItems('Heated Seats');
+        addListItems('+ Heated Seats');
     } else {
         totalPrice -= thirdOptionPrice;
     }
@@ -203,15 +203,25 @@ function showSummary(){
 }
 
 const summaryPriceElement = document.getElementById("summary-price");
+const summaryPaymentMethod = document.getElementById("summary-payment-method");
+
+function checkPaymentMethod(){
+    if(document.getElementById('leasing').checked) {
+       paymentMethod = 'leasing'
+      }else if(document.getElementById('cash').checked) {
+        paymentMethod = 'cash'
+      }
+      return paymentMethod
+}
 
 form.addEventListener("submit", function(event) {
     event.preventDefault();
-    const name = document.getElementById("name").value.trim();
-    const surname = document.getElementById("surname").value.trim();
     showSummary();
     updateTotal();
     let summaryPrice = totalPrice;
     summaryPriceElement.textContent = `Total: $${summaryPrice}`;
+    const paymentMethod = checkPaymentMethod();
+    summaryPaymentMethod.textContent = `Payment method: ${paymentMethod}`;
 });
 
 
