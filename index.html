@@ -8,8 +8,10 @@
     <title>Star Shop</title>
 </head>
 <body>
+    <div id="main">
     <div id="card-container"></div>
-
+</div>
+<div id="form" class="not-display" >
     <div class="form-container">
         <h2>Car Purchase Form</h2>
         <form>
@@ -38,10 +40,10 @@
                 <h3><div id="total-price"></div></h3>
             </div>
 
-            <button type="submit" id="submit-button">Submit</button>
-
-            <button type="button" id="back-button" onclick="history.back()">Go back</button>
+            <button type="submit" id="submit-button" onclick="redirect()">Submit</button>
         </form>
+        <button type="button" id="back-button" onclick="changeView()">Go back</button>
     </div>
+</div>
 </body>
 </html>

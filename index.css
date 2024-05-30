@@ -6,6 +6,9 @@ body {
     height: 100vh;
     margin: 0;
 }
+.not-display {
+    display: none;
+}
 .card {
     background-color: #fff;
     border-radius: 10px;

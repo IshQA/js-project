@@ -104,7 +104,9 @@ cars.forEach((car, index) => {
         const carPrice = Number(car.price)
         totalPrice = carPrice;
         updateTotal();
+        changeView();
     });
+    
     cardBody.appendChild(buyButton);
 
     card.appendChild(cardBody);
@@ -164,4 +166,17 @@ goBackButton.addEventListener('click', function(){
     totalPrice = 0
     updateTotal();
 });
+
+const form = document.getElementById('form');
+const cars = document.getElementById('main');
+
+function redirect(){
+    window.location.href="summary.html";
+    }
+
+function changeView(){
+    cars.classList.toggle('not-display');
+    form.classList.toggle('not-display');
+}
+
 
