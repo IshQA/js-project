@@ -56,14 +56,14 @@ button {
 #submit-button:hover, .buy-button:hover {
     background-color: #218838;
 }
-#back-button {
+#back-button, #go-to-main-button {
     background-color: rgb(183, 182, 182);
 }
-#back-button:hover {
+#back-button:hover, #go-to-main-button:hover {
     background-color: rgb(99, 99, 99);
 }
 
-.form-container {
+.form-container, #summary  {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

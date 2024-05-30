@@ -10,40 +10,47 @@
 <body>
     <div id="main">
     <div id="card-container"></div>
-</div>
-<div id="form" class="not-display" >
-    <div class="form-container">
-        <h2>Car Purchase Form</h2>
-        <form>
-            <input type="text" id="name" name="name" placeholder="Name" required>
-            <input type="text" id="surname" name="surname" placeholder="Surname" required>
-
-            <div>
-                <input type="radio" id="leasing" name="payment" value="leasing" required>
-                <label for="leasing">Leasing</label>
-                <input type="radio" id="cash" name="payment" value="cash" required>
-                <label for="cash">Cash</label>
-            </div>
-
-            <select id="date" name="date" required>
-                <option value="" disabled selected>Select a date</option>
-            </select>
-
-            <div class="checkbox-group">
-                <h3>Additional options:</h3>
-                <label><input type="checkbox" name="options" value="electric-mirrors" id="first-option"> Electric Mirrors 500$</label>
-                <label><input type="checkbox" name="options" value="gps" id="second-option"> GPS 130$</label>
-                <label><input type="checkbox" name="options" value="heated-seats" id="third-option"> Heated Seats 240$</label>
-            </div>
-
-            <div>
-                <h3><div id="total-price"></div></h3>
-            </div>
-
-            <button type="submit" id="submit-button" onclick="redirect()">Submit</button>
-        </form>
-        <button type="button" id="back-button" onclick="changeView()">Go back</button>
     </div>
-</div>
+    <div id="form" class="not-display" >
+        <div class="form-container">
+            <h2>Car Purchase Form</h2>
+            <form>
+                <input type="text" id="name" name="name" placeholder="Name" required>
+                <input type="text" id="surname" name="surname" placeholder="Surname" required>
+
+                <div>
+                    <input type="radio" id="leasing" name="payment" value="leasing" required>
+                    <label for="leasing">Leasing</label>
+                    <input type="radio" id="cash" name="payment" value="cash" required>
+                    <label for="cash">Cash</label>
+                </div>
+
+                <!-- <select id="date" name="date" required>
+                    <option value="" disabled selected>Select a date</option>
+                </select> -->
+
+                <div class="checkbox-group">
+                    <h3>Additional options:</h3>
+                    <label><input type="checkbox" name="options" value="electric-mirrors" id="first-option"> Electric Mirrors 500$</label>
+                    <label><input type="checkbox" name="options" value="gps" id="second-option"> GPS 130$</label>
+                    <label><input type="checkbox" name="options" value="heated-seats" id="third-option"> Heated Seats 240$</label>
+                </div>
+
+                <div>
+                    <h3><div id="total-price"></div></h3>
+                </div>
+
+                <button type="submit" id="submit-button">Submit</button>
+            </form>
+            <button type="button" id="back-button" onclick="showCars()">Go back</button>
+        </div>
+    </div>
+    <div id="summary" class="not-display">
+        <h2>Summary</h2>
+        <div id="summary-car"></div>
+        <ul id="summary-additional-options-list"></ul>
+        <p id="summary-price"></p>
+        <button type="button" id="go-to-main-button" onclick="showCars()">Check out more!</button>
+    </div>
 </body>
 </html>

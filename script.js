@@ -104,7 +104,7 @@ cars.forEach((car, index) => {
         const carPrice = Number(car.price)
         totalPrice = carPrice;
         updateTotal();
-        changeView();
+        showPurchase()
     });
     
     cardBody.appendChild(buyButton);
@@ -124,11 +124,19 @@ function updateTotal() {
 const firstAdditionalOption = document.getElementById('first-option');
 const secondAdditionalOption = document.getElementById('second-option');
 const thirdAdditionalOption = document.getElementById('third-option');
+const summaryAdditionalOptions = document.getElementById('summary-additional-options-list');
+
+function addListItems(option) {
+    const li = document.createElement('li');
+    li.textContent = option;
+    summaryAdditionalOptions.appendChild(li);
+}
 
 firstAdditionalOption.addEventListener('change', function(){
     const firstOptionPrice = 500;
     if (this.checked) {
         totalPrice += firstOptionPrice;
+        addListItems('Electric Mirrors');
     } else {
         totalPrice -= firstOptionPrice;
     }
@@ -139,6 +147,7 @@ secondAdditionalOption.addEventListener('change', function(){
     const secondOptionPrice = 130;
     if (this.checked) {
         totalPrice += secondOptionPrice;
+        addListItems('GPS');
     } else {
         totalPrice -= secondOptionPrice;
     }
@@ -149,6 +158,7 @@ thirdAdditionalOption.addEventListener('change', function(){
     const thirdOptionPrice = 240;
     if (this.checked) {
         totalPrice += thirdOptionPrice;
+        addListItems('Heated Seats');
     } else {
         totalPrice -= thirdOptionPrice;
     }
@@ -169,14 +179,36 @@ goBackButton.addEventListener('click', function(){
 
 const form = document.getElementById('form');
 const cars = document.getElementById('main');
+const summary = document.getElementById('summary')
 
-function redirect(){
-    window.location.href="summary.html";
-    }
+function showCars(){
+    cars.classList.remove('not-display');
+    form.classList.add('not-display');
+    summary.classList.add('not-display');
+};
 
-function changeView(){
-    cars.classList.toggle('not-display');
-    form.classList.toggle('not-display');
+function showPurchase(){
+    cars.classList.add('not-display');
+    form.classList.remove('not-display');
+    summary.classList.add('not-display');
+};
+
+function showSummary(){
+    summary.classList.remove('not-display');
+    cars.classList.add('not-display');
+    form.classList.add('not-display');
 }
+
+const summaryPriceElement = document.getElementById("summary-price");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const surname = document.getElementById("surname").value.trim();
+    showSummary();
+    updateTotal();
+    let summaryPrice = totalPrice;
+    summaryPriceElement.textContent = `Total: $${summaryPrice}`;
+});
 
 
