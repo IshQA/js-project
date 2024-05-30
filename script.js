@@ -222,6 +222,34 @@ form.addEventListener("submit", function(event) {
     summaryPriceElement.textContent = `Total: $${summaryPrice}`;
     const paymentMethod = checkPaymentMethod();
     summaryPaymentMethod.textContent = `Payment method: ${paymentMethod}`;
+    summaryDeliveryDate.textContent = `Will be at your place at ${selectedDate}`;
 });
 
+const dateSelect = document.getElementById("date");
+const today = new Date();
+today.setHours(0, 0, 0, 0);
 
+for (let i = 0; i < 14; i++) {
+    const optionDate = new Date(today);
+    optionDate.setDate(today.getDate() + i);
+
+    const option = document.createElement("option");
+    option.value = formatDate(optionDate);
+    option.textContent = formatDate(optionDate);
+    dateSelect.appendChild(option);
+}
+
+
+function formatDate(date) {
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+const summaryDeliveryDate = document.getElementById("summary-delivery-date");
+let selectedDate;
+dateSelect.addEventListener("change", function() {
+    selectedDate = this.value;
+    return selectedDate;
+});
