@@ -29,18 +29,18 @@
 
             <div class="checkbox-group">
                 <h3>Additional options:</h3>
-                <label><input type="checkbox" name="options" value="electric-mirrors"> Electric Mirrors 500$</label>
-                <label><input type="checkbox" name="options" value="gps"> GPS 130$</label>
-                <label><input type="checkbox" name="options" value="heated-seats"> Heated Seats 240$</label>
+                <label><input type="checkbox" name="options" value="electric-mirrors" id="first-option"> Electric Mirrors 500$</label>
+                <label><input type="checkbox" name="options" value="gps" id="second-option"> GPS 130$</label>
+                <label><input type="checkbox" name="options" value="heated-seats" id="third-option"> Heated Seats 240$</label>
             </div>
 
             <div>
                 <h3><div id="total-price"></div></h3>
             </div>
 
-            <button type="submit" class="submit-button">Submit</button>
+            <button type="submit" id="submit-button">Submit</button>
 
-            <button type="button" class="back-button" onclick="history.back()">Go back</button>
+            <button type="button" id="back-button" onclick="history.back()">Go back</button>
         </form>
     </div>
 </body>

@@ -119,4 +119,49 @@ function updateTotal() {
     totalPriceElement.textContent = `Total: $${totalPrice}`;
 }
 
+const firstAdditionalOption = document.getElementById('first-option');
+const secondAdditionalOption = document.getElementById('second-option');
+const thirdAdditionalOption = document.getElementById('third-option');
+
+firstAdditionalOption.addEventListener('change', function(){
+    const firstOptionPrice = 500;
+    if (this.checked) {
+        totalPrice += firstOptionPrice;
+    } else {
+        totalPrice -= firstOptionPrice;
+    }
+    updateTotal();
+})
+
+secondAdditionalOption.addEventListener('change', function(){
+    const secondOptionPrice = 130;
+    if (this.checked) {
+        totalPrice += secondOptionPrice;
+    } else {
+        totalPrice -= secondOptionPrice;
+    }
+    updateTotal();
+})
+
+thirdAdditionalOption.addEventListener('change', function(){
+    const thirdOptionPrice = 240;
+    if (this.checked) {
+        totalPrice += thirdOptionPrice;
+    } else {
+        totalPrice -= thirdOptionPrice;
+    }
+    updateTotal();
+})
+const checkboxes = document.querySelectorAll('input[name="options"]');
+function uncheckAllCheckboxes() {
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+    });
+}
+const goBackButton = document.getElementById("back-button");
+goBackButton.addEventListener('click', function(){
+    uncheckAllCheckboxes();
+    totalPrice = 0
+    updateTotal();
+});
 

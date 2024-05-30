@@ -47,16 +47,16 @@ button {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
 }
-.submit-button, .buy-button {
+#submit-button, .buy-button {
     background-color: #28a745;
 }
-.submit-button:hover, .buy-button:hover {
+#submit-button:hover, .buy-button:hover {
     background-color: #218838;
 }
-.back-button {
+#back-button {
     background-color: rgb(183, 182, 182);
 }
-.back-button:hover {
+#back-button:hover {
     background-color: rgb(99, 99, 99);
 }
 
