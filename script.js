@@ -179,26 +179,26 @@ goBackButton.addEventListener('click', function(){
     updateTotal();
 });
 
-const form = document.getElementById('form');
+const formView = document.getElementById('form-view');
 const cars = document.getElementById('main');
 const summary = document.getElementById('summary')
 
 function showCars(){
     cars.classList.remove('not-display');
-    form.classList.add('not-display');
+    formView.classList.add('not-display');
     summary.classList.add('not-display');
 };
 
 function showPurchase(){
     cars.classList.add('not-display');
-    form.classList.remove('not-display');
+    formView.classList.remove('not-display');
     summary.classList.add('not-display');
 };
 
 function showSummary(){
     summary.classList.remove('not-display');
     cars.classList.add('not-display');
-    form.classList.add('not-display');
+    formView.classList.add('not-display');
     summaryCar.src = selectedCarImage;
 }
 
@@ -214,7 +214,7 @@ function checkPaymentMethod(){
       return paymentMethod
 }
 
-form.addEventListener("submit", function(event) {
+formView.addEventListener("submit", function(event) {
     event.preventDefault();
     showSummary();
     updateTotal();
@@ -252,4 +252,12 @@ let selectedDate;
 dateSelect.addEventListener("change", function() {
     selectedDate = this.value;
     return selectedDate;
+});
+
+const resetButton = document.getElementById("go-to-main-button");
+resetButton.addEventListener("click", function(event) {
+    const form = document.getElementById("purchase-form");
+    event.preventDefault();
+    form.reset();
+    showCars();
 });
