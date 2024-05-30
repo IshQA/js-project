@@ -101,10 +101,11 @@ cars.forEach((car, index) => {
     buyButton.textContent = "Click to buy";
     buyButton.id = `buy-button-${index}`;
     buyButton.addEventListener("click", function() {
-        const carPrice = Number(car.price)
+        const carPrice = Number(car.price);
         totalPrice = carPrice;
+        selectedCarImage = car.imageSrc;
         updateTotal();
-        showPurchase()
+        showPurchase();
     });
     
     cardBody.appendChild(buyButton);
@@ -120,6 +121,7 @@ let totalPrice = 0;
 function updateTotal() {
     totalPriceElement.textContent = `Total: $${totalPrice}`;
 }
+const summaryCar = document.getElementById("summary-car");
 
 const firstAdditionalOption = document.getElementById('first-option');
 const secondAdditionalOption = document.getElementById('second-option');
@@ -197,6 +199,7 @@ function showSummary(){
     summary.classList.remove('not-display');
     cars.classList.add('not-display');
     form.classList.add('not-display');
+    summaryCar.src = selectedCarImage;
 }
 
 const summaryPriceElement = document.getElementById("summary-price");
