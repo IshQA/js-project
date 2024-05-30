@@ -36,7 +36,6 @@ body {
     margin: 10px 0;
 }
 button {
-    background-color: #28a745;
     color: #fff;
     border: none;
     padding: 15px 20px;
@@ -47,6 +46,9 @@ button {
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
+}
+.submit-button, .buy-button {
+    background-color: #28a745;
 }
 .submit-button:hover, .buy-button:hover {
     background-color: #218838;

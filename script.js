@@ -8,7 +8,7 @@ const cars = [
         year: "2020",
         mileage: "30,000 km",
         color: "Red",
-        price: "$25,000"
+        price: 25000
     },
     {
         imageSrc: "assets/car2.png",
@@ -17,7 +17,7 @@ const cars = [
         year: "2019",
         mileage: "20,000 km",
         color: "Blue",
-        price: "$22,000"
+        price: 22000
     },
     {
         imageSrc: "assets/car3.png",
@@ -26,7 +26,7 @@ const cars = [
         year: "2021",
         mileage: "10,000 km",
         color: "Black",
-        price: "$30,000"
+        price: 30000
     },
     {
         imageSrc: "assets/car4.jpg",
@@ -35,7 +35,7 @@ const cars = [
         year: "2018",
         mileage: "50,000 km",
         color: "White",
-        price: "$20,000"
+        price: 20000
     },
     {
         imageSrc: "assets/car5.jpg",
@@ -44,7 +44,7 @@ const cars = [
         year: "2022",
         mileage: "5,000 km",
         color: "Silver",
-        price: "$35,000"
+        price: 35000
     },
     {
         imageSrc: "assets/car6.jpg",
@@ -53,13 +53,13 @@ const cars = [
         year: "722",
         mileage: "305,000 km",
         color: "Red",
-        price: "$235,000"
+        price: 235000
     }
 ];
 
 const cardContainer = document.getElementById("card-container");
 
-cars.forEach(car => {
+cars.forEach((car, index) => {
     const card = document.createElement("div");
     card.className = "card";
 
@@ -93,12 +93,18 @@ cars.forEach(car => {
 
     const price = document.createElement("p");
     price.className = "price";
-    price.textContent = `Price: ${car.price}`;
+    price.textContent = `Price: $${car.price}`;
     cardBody.appendChild(price);
 
     const buyButton = document.createElement("button");
     buyButton.className = "buy-button";
     buyButton.textContent = "Click to buy";
+    buyButton.id = `buy-button-${index}`;
+    buyButton.addEventListener("click", function() {
+        const carPrice = Number(car.price)
+        totalPrice = carPrice;
+        updateTotal();
+    });
     cardBody.appendChild(buyButton);
 
     card.appendChild(cardBody);
@@ -106,3 +112,11 @@ cars.forEach(car => {
     cardContainer.appendChild(card);
 });
 });
+
+const totalPriceElement = document.getElementById("total-price");
+let totalPrice = 0;
+function updateTotal() {
+    totalPriceElement.textContent = `Total: $${totalPrice}`;
+}
+
+
